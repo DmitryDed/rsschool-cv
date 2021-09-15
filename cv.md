@@ -86,3 +86,11 @@ def parser():
 
 parser()
 ```
+
+### Education ###
+Bachelor, Belarusian State University, Minsk
+
+### Languages ###
+- Russian
+- Belarusian
+- English (B1)

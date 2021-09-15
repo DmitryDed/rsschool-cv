@@ -15,3 +15,15 @@ Apart from physics and mathematics, my specialty is related to programming. This
 After communicating with people from different fields, studying various programming languages, I decided to try myself as Frontend Developer.
   
 I am ready to spend my free time learning something new and I believe that the field of programming, like no other, allows you to pump yourself and your skills. 
+
+### My strengths: ### 
+- flexibility 
+- responsibility
+- purposefulness 
+
+### Skills and Prificiency: ### 
+- HTML5, CSS3
+- Git, GitHub
+- VS Code, VS
+- Adobe Photoshop
+- JavaScript

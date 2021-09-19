@@ -1,10 +1,19 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible"  content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rsschool-cv-html</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
         <div class="container-centered">
+           <div class="two-columns">
             <div class="left-column">
                 <header>
                     <h1>Dmitry Abramov</h1>
@@ -15,15 +24,15 @@
                         <h3>Contacts</h3>
                         <ul>
                             <li>
-                                <img src="" alt="Phone Icon" width="30" height="30"> 
+                                <img src="https://cdn.icon-icons.com/icons2/494/PNG/512/phone-handset_icon-icons.com_48252.png" alt="Phone Icon" width="30" height="30"> 
                                 <p>+375(25)693-30-85</p>
                             </li>
                             <li>
-                                <img src="" alt="Email Icon" width="30" height="30">
+                                <img src="https://image.flaticon.com/icons/png/512/88/88042.png" alt="Email Icon" width="30" height="30">
                                 <p>abrannik25@gmail.com</p>
                             </li>
                             <li>
-                                <img src="" alt="Telegram Icon" width="30" height="30">
+                                <img src="https://cdn-icons-png.flaticon.com/512/87/87413.png" alt="Telegram Icon" width="30" height="30">
                                 <p>@de4lt_dd</p>
                             </li>
                         </ul>
@@ -32,27 +41,18 @@
                         <h3>Skills</h3>
                         <ul>
                             <li>
-                                ::marker
                                 HTML5, CSS3
                             </li>
                             <li>
-                                ::marker
                                 Git, GitHub
                             </li>
                             <li>
-                                ::marker
-                                Git, GitHub                            
-                            </li>
-                            <li>
-                                ::marker
                                 VS Code, VS
                             </li>
                             <li>
-                                ::marker
                                 Adobe Photoshop
                             </li>
                             <li>
-                                ::marker
                                 JavaScript
                             </li>
                         </ul>
@@ -61,15 +61,12 @@
                         <h3>Languages</h3>
                         <ul>
                             <li>
-                                ::marker
                                 Russian
                             </li>
                             <li>
-                                ::marker
                                 Belarusian
                             </li>
                             <li>
-                                ::marker
                                 English (B1)
                             </li>
                         </ul>
@@ -80,11 +77,12 @@
                 <section class="about-myself">
                     <div class="sub-header">
                         <h3>About Myself</h3>
+                    </div>
                         <p>
                             I study at the BSU at the Faculty of Radiophysics. Since high school, I have always been close to subjects such as physics and mathematics. That is why, when looking for a direction after graduation, the choice fell on a faculty with a technical specialty.
                         </p>
                         <p>
-                            Apart from physics and mathematics, my specialty is related to programming. This area interested me. In addition, in the modern world, it is one of the most popular. So I decided to learn a programming language like C #. However, after completing the courses from EPAM, I realized that I wanted something different. After communicating with people from different fields, studying various programming languages, I decided to try myself as Frontend Developer.
+                           Apart from physics and mathematics, my specialty is related to programming. This area interested me. In addition, in the modern world, it is one of the most popular. So I decided to learn a programming language like C #. However, after completing the courses from EPAM, I realized that I wanted something different. After communicating with people from different fields, studying various programming languages, I decided to try myself as Frontend Developer.
                         </p>
                         <p>
                             I am ready to spend my free time learning something new and I believe that the field of programming, like no other, allows you to pump yourself and your skills.
@@ -94,14 +92,17 @@
                 <section class="education">
                     <div class="sub-header">
                         <h3>Education</h3>
-                        <p>Bachelor, Belarusian State University, Minsk</p>
                     </div>
+                    <p>
+                        Bachelor, Belarusian State University, Minsk
+                    </p>
                 </section>
                 <section class="code-example">
                     <div class="sub-header">
                         <h3>Code Example</h3>
-                        <pre>
-                            <code>
+                    </div>
+                    <pre>
+                        <code>
 import requests
 from bs4 import BeautifulSoup
 import csv
@@ -109,60 +110,59 @@ import csv
 CSV = 'cards.csv'
 HOST = 'https://mcdonalds.by/ru/'
 URL = 'https://mcdonalds.by/ru/news.html'
-HEADERS = {'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-    'user-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36'}
+HEADERS = {'accept': 'text/html,application/xhtml+xml,application/xml',
+'user-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
 
 
 def get_html(url, params=''):
-    r = requests.get(url, headers=HEADERS, params=params)
-    return r
+r = requests.get(url, headers=HEADERS, params=params)
+return r
 
 
 def get_content(html):
-    soup = BeautifulSoup(html, 'html.parser')
-    items = soup.find_all('div', class_='row mc-news-all-blocks-holder')
-    cards = []
-    # print(items)
-    for item in items:
-        cards.append(
-            {
-                'title': item.find('div', class_='col-lg-12 col-md-12 col-sm-12 col-xs-12').get_text(strip=True),
-                'link_product': item.find('div', class_='mc-news-all-img-holder').find('a').get('href')
-            }
-            )
-    return cards
+soup = BeautifulSoup(html, 'html.parser')
+items = soup.find_all('div', class_='row mc-news-all-blocks-holder')
+cards = []
+# print(items)
+for item in items:
+    cards.append(
+        {
+            'title': item.find('div', class_='col-lg-12 col-md-12 col-sm-12 col-xs-12').get_text(strip=True),
+            'link_product': item.find('div', class_='mc-news-all-img-holder').find('a').get('href')
+        }
+        )
+return cards
 
 
 def save_doc(items, path):
-    with open(path, 'w', newline='') as file:
-        writer = csv.writer(file, delimiter=';')
-        writer.writerow(['Название продукта: ', 'Ссылка: '])
-        for item in items:
-            writer.writerow([item['title'], item['link_product']])
+with open(path, 'w', newline='') as file:
+    writer = csv.writer(file, delimiter=';')
+    writer.writerow(['Название продукта: ', 'Ссылка: '])
+    for item in items:
+        writer.writerow([item['title'], item['link_product']])
 
 
 def parser():
-    PAGE = input('Количество страниц: ')
-    PAGE = int(PAGE.strip())
-    html = get_html(URL)
-    if html.status_code == 200:
-        cards = []
-        for page in range(1, PAGE):
-            print(f'Парсим страницу: {page}')
-            html = get_html(URL, params={'page': page})
-            cards.extend(get_content(html.text))
-            save_doc(cards, CSV)
-    else:
-        print('Error')
+PAGE = input('Количество страниц: ')
+PAGE = int(PAGE.strip())
+html = get_html(URL)
+if html.status_code == 200:
+    cards = []
+    for page in range(1, PAGE):
+        print(f'Парсим страницу: {page}')
+        html = get_html(URL, params={'page': page})
+        cards.extend(get_content(html.text))
+        save_doc(cards, CSV)
+else:
+    print('Error')
 
 parser()
 
-                            </code>
-                        </pre>
-
-                    </div>
+                        </code>
+                    </pre>
                 </section>
             </aside>
+           </div>
             <footer>
                 <a class="my-github" href="https://github.com/DmitryDed">
                 <p>Visit my GitHub</p>
